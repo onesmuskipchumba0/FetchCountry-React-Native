@@ -14,6 +14,17 @@ export default function RootLayout() {
   const colorScheme = useColorScheme();
   const [loaded] = useFonts({
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+    PoppinsBlack: require('../assets/fonts/Poppins-Black.ttf'),
+    PoppinsBlackItalic: require('../assets/fonts/Poppins-BlackItalic.ttf'),
+    PoppinsBold: require('../assets/fonts/Poppins-Bold.ttf'),
+    PoppinsExtraBold: require('../assets/fonts/Poppins-ExtraBold.ttf'),
+    PoppinsExtraBoldItalic: require('../assets/fonts/Poppins-ExtraBoldItalic.ttf'),
+    PoppinsLight: require('../assets/fonts/Poppins-Light.ttf'),
+    PoppinsItalic: require('../assets/fonts/Poppins-Italic.ttf'),
+    PoppinsRegular: require('../assets/fonts/Poppins-Regular.ttf'),
+    PoppinsSemiBold: require('../assets/fonts/Poppins-SemiBold.ttf'),
+    PoppinsThin: require('../assets/fonts/Poppins-Thin.ttf'),
+    
   });
 
   useEffect(() => {
@@ -29,8 +40,9 @@ export default function RootLayout() {
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
+        {/* Add the login screen */}
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
+        <Stack.Screen name="[country]" options={{headerShown:false}}/>
       </Stack>
     </ThemeProvider>
   );
